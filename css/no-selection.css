@@ -1,0 +1,113 @@
+/*
+background
+261E3A
+blue
+005490
+red
+C51A28
+light gray
+E2E2E2
+font quantico
+*/
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* body{
+    background-color: #261E3A;
+    color: #E2E2E2;
+    font-family: 'Quantico', sans-serif;
+} */
+
+nav {
+	font-size: 1.5rem;
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+nav .logo {
+	padding: 0.3rem 1rem 0rem 1rem;
+}
+
+nav .selection {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+nav .pill {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+nav .pill_left {
+	height: 50px;
+	width: 65px;
+	border-radius: 150px 0px 0px 150px;
+	border: 2px solid #005490;
+	text-align: center;
+	padding-top: 0.3rem;
+}
+
+nav .pill_left:hover {
+	background-image: linear-gradient(#261e3a, #014474);
+}
+
+nav .pill_right {
+	height: 50px;
+	width: 65px;
+	border-radius: 0px 150px 150px 0px;
+	border: 2px solid #005490;
+	background-image: linear-gradient(#005490, #014474);
+}
+
+nav a {
+	text-decoration: none;
+	color: #e2e2e2;
+}
+
+nav p {
+	padding: 0.3rem 1rem 0rem 1rem;
+}
+
+nav .empty {
+	visibility: hidden;
+}
+
+@media screen and (max-width: 1020px) {
+	nav {
+		flex-direction: column;
+		justify-content: center;
+	}
+	nav .selection {
+		flex-direction: column;
+	}
+	nav .selection,
+	nav .pill,
+	nav p {
+		text-align: center;
+		padding: 0.2rem;
+	}
+	nav .logo {
+		padding: 0.5rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	nav {
+		text-align: center;
+	}
+}
+
+main {
+	text-align: center;
+	padding: 3rem;
+	background-color: #171224;
+	height: 92vh;
+}
