@@ -100,8 +100,10 @@ const controller = {
 // =========== TMDB API ==============
 
 (function () {
+    //get all movie boxes
     const movieBoxes = document.querySelectorAll('.movies');
 
+    //genre id in TMDB api
     const movieGenres = {
         drama: 18,
         action: 28,
@@ -112,6 +114,7 @@ const controller = {
     }
 
     const movieSearch = (genreId) => {
+        //fetch movies from a specified genre based on the movie revenue
         const url = `https://api.themoviedb.org/3/discover/movie?with_genres=${movieGenres[genreId]}&sort_by=revenue.desc&api_key=0a77033036d0112b03d5fb8d85f886b1`;
 
         fetch(url)
@@ -119,10 +122,11 @@ const controller = {
             .then((movies) => {
                 //only map over the first 10 movies in the array
                 let limit = 10;
+                //create html string to be injected
                 let html = `<h2>Recommended ${genreId} movies</h2>`
                 html += movies.results.slice(0, limit).map(movie => {
                     console.log(movie)
-                    return `<li><a href="">${movie.title}</a></li>`
+                    return `<li>${movie.title}</li>`
                 })
                 document.getElementById('category-list').innerHTML = html;
             })
@@ -138,9 +142,6 @@ const controller = {
     }))
 
 })();
-
-
-
 
 const closePopup = () => {
     controller.popupModal.classList.add('hide');
