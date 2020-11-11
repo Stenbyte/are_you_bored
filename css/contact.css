@@ -36,10 +36,12 @@ nav .selection {
 nav .pill {
     display: flex;
     flex-direction: row;
-    justify-content: center;  
+    justify-content: center;
 }
 
-nav .pill_left {
+/* BLUE PILL */
+
+nav .pill_left_blue {
     height: 50px;
     width: 65px;
     border-radius: 150px 0px 0px 150px;
@@ -48,17 +50,44 @@ nav .pill_left {
     padding-top: 0.3rem;
     }
 
-nav .pill_left:hover {
+nav .pill_left_blue:hover {
     background-image: linear-gradient(#261E3A, #013458);
 }
 
-nav .pill_right {
+nav .pill_right_blue {
     height: 50px;
     width: 65px;
     border-radius: 0px 150px 150px 0px;
     border: 2px solid #005490;
     background-image: linear-gradient(#005490, #013458);
+    margin-right: 0.5rem;
     }
+
+/* RED PILL */
+
+nav .pill_left_red {
+    height: 50px;
+    width: 65px;
+    border-radius: 150px 0px 0px 150px;
+    border: 2px solid #C51A28;
+    text-align: center;
+    padding-top: 0.3rem;
+    margin-left: 0.5rem;
+    }
+
+nav .pill_left_red:hover {
+    background-image: linear-gradient(#261E3A, #7c111a);
+}
+
+nav .pill_right_red {
+    height: 50px;
+    width: 65px;
+    border-radius: 0px 150px 150px 0px;
+    border: 2px solid #C51A28;
+    background-image: linear-gradient(#C51A28, #7c111a);
+    }
+
+/* -------------------- */
 
 nav a {
     text-decoration: none;
@@ -108,7 +137,7 @@ main {
     background-image: url("https://source.unsplash.com/GU5rGxIygNQ/1920x1508");
     background-position: top right;
     background-size: cover;
-    text-align: center;
+    text-align: left;
     padding: 3rem;
     /* background-color: #171224;*/
     height: 92vh;
@@ -126,4 +155,54 @@ main::before { /* Places an overlay on the banner section. Not sure I want it, t
 
 main h1 {
     position: relative;
+}
+
+/* CONTACT FORM */
+
+.container_contact h1 {
+    text-align: left;
+}
+
+form {
+    text-align: left;
+    width: 50%;
+    position: relative;
+}
+
+form label {
+    display: block;
+}
+
+form .form-group {
+    padding: 10px 0;
+}
+
+form input {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 0;
+}
+
+textarea {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 100px;
+
+}
+
+button {
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #261E3A;
+    color: white;
+    font-family: 'Quantico', sans-serif;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #005490;
 }

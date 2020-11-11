@@ -9,10 +9,7 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<!-- Component styles -->
 		<link rel="stylesheet" href="css/yes-selection.css" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Quantico&display=swap"
-			rel="stylesheet"
-		/>
+		<link href="https://fonts.googleapis.com/css2?family=Quantico&display=swap" rel="stylesheet"/>
 	</head>
 	<body>
 		<header>
@@ -70,20 +67,21 @@
 					<p>Top100</p>
 				</div>
 			</div>
-			<h2>News</h2>
-			<div class="yes_grid">
-				<div class="box">
-					<p>Top100</p>
-				</div>
-				<div class="box">
-					<p>Top100</p>
-				</div>
-				<div class="box">
-					<p>Top100</p>
-				</div>
-				<div class="box">
-					<p>Top100</p>
-				</div>
+          <!-- News category -->
+        <h2 id="news-categories">News</h2>
+        <div class="yes_grid">
+          <div class="box new-category" id="top-news">
+            <p>Top News</p>
+          </div>
+          <div class="box new-category" id="technology">
+            <p>Technology</p>
+          </div>
+          <div class="box new-category" id="business">
+            <p>Business</p>
+          </div>
+          <div class="box new-category" id="health">
+            <p>Health</p>
+          </div>
       </div>
       <div class="Chuck">
       <p id="jokeText"></p>
@@ -93,14 +91,29 @@
 		<footer>
 			<h3>Team_4</h3>
     </footer>
-    <div id="category-popup" class="hide">
-      <button onclick="closePopup()">Close</button>
-      <ul id="category-list">
-        
-      </ul>
-    </div>
-    
-    <script src="/js/script.js"></script>
-    <script src="/js/Chuck.js"></script>
-	</body>
+    	<!-- Spotify popup -->
+	<div id="category-popup" class="hide">
+		<button onclick="closePopup()">Close</button>
+		<ul id="category-list">
+
+		</ul>
+	</div>
+
+	<!-- News popup -->
+	<div class="modal" id="modal">
+		<div class="modal-content news-modal">
+			<div class="modal-body" id="news-modal-body">
+				<!-- single article -->
+			</div>
+
+			<div class="modal-footer ">
+				<button type="button" id="news-close-btn" class="news-btn">CLOSE</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="/js/script.js"></script>
+  <script src="/js/fetchNews.js"></script>
+  <script src="/js/Chuck.js"></script>
+</body>
 </html>
