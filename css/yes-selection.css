@@ -181,8 +181,8 @@ header .yes img {
   color: rgb(148, 147, 147);
 }
 .img-thumbnail {
-  width: 400px;
-  max-height: 250px;
+  width: 100%;
+  height: auto;
 }
 
 .news-article {
@@ -200,5 +200,10 @@ header .yes img {
 @media screen and (min-width: 768px) {
   .modal-content {
     padding: 3rem 5rem;
+  }
+
+  .img-thumbnail {
+    width: 400px;
+    max-height: 250px;
   }
 }
