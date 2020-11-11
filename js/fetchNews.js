@@ -1,10 +1,21 @@
-const URL =
-  'https://api.nytimes.com/svc/topstories/v2/world.json?api-key=YaFIj8104OC2N7BdGaUDXSwJGterA7KQ';
+const TOP_NEWS_URL =
+  'https://api.nytimes.com/svc/topstories/v2/home.json?api-key=YaFIj8104OC2N7BdGaUDXSwJGterA7KQ';
+const TECH_URL =
+  'https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=YaFIj8104OC2N7BdGaUDXSwJGterA7KQ';
+const BUSINESS_URL =
+  'https://api.nytimes.com/svc/topstories/v2/business.json?api-key=YaFIj8104OC2N7BdGaUDXSwJGterA7KQ';
+const HEALTH_URL =
+  'https://api.nytimes.com/svc/topstories/v2/health.json?api-key=YaFIj8104OC2N7BdGaUDXSwJGterA7KQ';
 
 const topNews = document.getElementById('top-news');
+const techNews = document.getElementById('technology');
+const businessNews = document.getElementById('business');
+const healthNews = document.getElementById('health');
+
 const closeBtn = document.getElementById('news-close-btn');
 const modal = document.getElementById('modal');
-const modalBody = document.getElementById('modal-body');
+const modalBody = document.getElementById('news-modal-body');
+
 function openModal() {
   modal.classList.add('show-modal');
 }
@@ -25,10 +36,10 @@ function getRandomObj(arr, size) {
   return result;
 }
 
-const getNews = () => {
+/*const getNews = () => {
   // Fetch news from api
-  fetchNews(URL);
-};
+  fetchNews(TOP_NEWS_URL);
+};*/
 
 const fetchNews = (url) => {
   return fetch(url)
@@ -55,11 +66,25 @@ const fetchNews = (url) => {
 
 topNews.addEventListener('click', () => {
   openModal();
-  getNews();
+  fetchNews(TOP_NEWS_URL);
+});
+
+techNews.addEventListener('click', () => {
+  openModal();
+  fetchNews(TECH_URL);
+});
+
+businessNews.addEventListener('click', () => {
+  openModal();
+  fetchNews(BUSINESS_URL);
+});
+
+healthNews.addEventListener('click', () => {
+  openModal();
+  fetchNews(HEALTH_URL);
 });
 
 closeBtn.addEventListener('click', closeModal);
-
 window.addEventListener('click', (e) => {
   if (e.target == modal) {
     modal.classList.remove('show-modal');
