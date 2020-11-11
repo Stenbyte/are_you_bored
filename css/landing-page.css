@@ -1,3 +1,13 @@
+.contact {
+	padding: 1rem 2rem;
+	text-align: right;
+}
+
+.contact a {
+	text-decoration: none;
+	color: white;
+}
+
 .container {
 	display: flex;
 	flex-direction: column;
@@ -6,7 +16,7 @@
 	width: 90vw;
 	max-width: 1170px;
 	margin: 0 auto;
-	min-height: 100vh;
+	min-height: 90vh;
 }
 
 .main-title {
@@ -22,3 +32,4 @@
 .yes-btn {
 	margin-right: 5rem;
 }
+
