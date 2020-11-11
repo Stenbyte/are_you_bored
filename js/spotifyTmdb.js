@@ -45,7 +45,7 @@ const controller = {
             const data = await result.json();
             spotifyListTitle = data.playlists.items[0].description;
             console.log(spotifyListTitle)
-            tracksEndPoint = data.playlists.items[0].tracks.href;
+            tracksEndPoint = data.playlists.items[1].tracks.href;
             console.log(tracksEndPoint);
 
             const getTracks = async (token, tracksEndPoint) => {
@@ -69,8 +69,8 @@ const controller = {
                 html += data.items.map(item => {
                     i++
                     return '<li><a href=' + spotifyURIs[i] + '>' + item.track.name + '</a></li>'
-                })
-                document.getElementById('category-list').innerHTML = html;
+                }).join('');
+                document.getElementById('category-list-music').innerHTML = html;
 
                 // return data.items;
 
@@ -87,15 +87,14 @@ const controller = {
 
     //add eventlisteners to all music category boxes
     musicBoxes.forEach(box => box.addEventListener('click', (e) => {
+        document.getElementById('category-list-music').innerHTML = '';
+        document.getElementById('category-list-movies').innerHTML = '';
         controller.popupModal.classList.remove('hide');
         controller.popupOpen = true;
         genreId = e.target.innerText.toLowerCase();
         spotifySearch();
     }))
-
 })();
-
-
 
 // =========== TMDB API ==============
 
@@ -123,18 +122,28 @@ const controller = {
                 //only map over the first 10 movies in the array
                 let limit = 10;
                 //create html string to be injected
-                let html = `<h2>Recommended ${genreId} movies</h2>`
+                let html = `<h2>Recommended ${genreId} movies</h2><div class="movies-content">`
                 html += movies.results.slice(0, limit).map(movie => {
                     console.log(movie)
-                    return `<li>${movie.title}</li>`
-                })
-                document.getElementById('category-list').innerHTML = html;
+                    if(movie.poster_path || movie.backdrop_path){
+                        return `<li><div class="movie-card"><h4>${movie.title}</h4><img src="https://image.tmdb.org/t/p/w500/${movie.poster_path || movie.backdrop_path}" alt="picture of ${movie.title}" /><div></li>`
+                    } else {
+                        return `<li><div class="movie-card"><h4>${movie.title}</h4><span><i class="far fa-eye-slash"></i></span></div></li>`
+                    }
+                    
+                }).join(''); //join() to get rid of , (comma) in html
+                html += `</div>`
+                console.log(html)
+                document.getElementById('category-list-movies').innerHTML = html;
             })
             .catch(err => console.log(err));
     }
 
 
     movieBoxes.forEach(box => box.addEventListener('click', (e) => {
+        document.getElementById('category-list-movies').innerHTML = '';
+        document.getElementById('category-list-music').innerHTML = '';
+
         controller.popupModal.classList.remove('hide');
         controller.popupOpen = true;
         genreId = e.target.innerText.toLowerCase();
