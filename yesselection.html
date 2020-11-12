@@ -1,105 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Are You bored?Yes</title>
-		<link rel="icon" type="image/png" href="img/favicon.ico" />
-		<!-- Main styles -->
-		<link rel="stylesheet" href="css/main.css" />
-		<!-- Component styles -->
-		<link rel="stylesheet" href="css/yes-selection.css" />
-		<link rel="stylesheet" href="css/music-movies-popup.css">
-		<link
-			href="https://fonts.googleapis.com/css2?family=Quantico&display=swap"
-			rel="stylesheet"
-		/>
-		<script src="https://kit.fontawesome.com/1eb4659c58.js" crossorigin="anonymous"></script>
-	</head>
-	<body>
-		<header>
-			<nav class="yes">
-				<h1>Are you bored?</h1>
-				<a href="#">
-					<img src="img/Group 9.png" alt="blue" />
-					<img src="img/Group 10.png" alt="red" />
-				</a>
-			</nav>
-		</header>
-		<main>
-			<h2>Books</h2>
-			<div class="yes_grid">
-				<div class="box">
-					<p>Top100</p>
-				</div>
-				<div class="box">
-					<p>Top100</p>
-				</div>
-				<div class="box">
-					<p>Top100</p>
-				</div>
-				<div class="box">
-					<p>Top100</p>
-				</div>
-			</div>
-			<h2>Music</h2>
-			<div class="yes_grid">
-				<div class="box music">
-					<p>Rock</p>
-				</div>
-				<div class="box music">
-					<p>Pop</p>
-				</div>
-				<div class="box music">
-					<p>Jazz</p>
-				</div>
-				<div class="box music">
-					<p>Hiphop</p>
-				</div>
-			</div>
-			<h2>Movie</h2>
-			<div class="yes_grid">
-				<div class="box movies">
-					<p>Drama</p>
-				</div>
-				<div class="box movies">
-					<p>Fantasy</p>
-				</div>
-				<div class="box movies">
-					<p>Comedy</p>
-				</div>
-				<div class="box movies">
-					<p>Horror</p>
-				</div>
-			</div>
-			<h2>News</h2>
-			<div class="yes_grid">
-				<div class="box">
-					<p>Top100</p>
-				</div>
-				<div class="box">
-					<p>Top100</p>
-				</div>
-				<div class="box">
-					<p>Top100</p>
-				</div>
-				<div class="box">
-					<p>Top100</p>
-				</div>
-			</div>
-		</main>
-		<footer>
-			<h3>Team_4</h3>
-    </footer>
-    <div id="category-popup" class="hide">
-      <button onclick="closePopup()">Close</button>
-	  <ul id="category-list-music" class="category-list"></ul>
-	  <ul id="category-list-movies" class="category-list"></ul>
-	</div>
-	
-    <script src="/js/spotifyTmdb.js"></script>
-	</body>
-</html>
 
 <head>
 	<meta charset="UTF-8" />
@@ -111,6 +11,8 @@
 	<!-- Component styles -->
 	<link rel="stylesheet" href="css/yes-selection.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Quantico&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="css/music-movies-popup.css">
+	<script src="https://kit.fontawesome.com/1eb4659c58.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -124,19 +26,19 @@
 		</nav>
 	</header>
 	<main>
-		<h2>Books</h2>
+		<h2>Music</h2>
 		<div class="yes_grid">
-			<div class="box">
-				<p>Top100</p>
+			<div class="box music">
+				<p>Rock</p>
 			</div>
-			<div class="box">
-				<p>Top100</p>
+			<div class="box music">
+				<p>Pop</p>
 			</div>
-			<div class="box">
-				<p>Top100</p>
+			<div class="box music">
+				<p>Jazz</p>
 			</div>
-			<div class="box">
-				<p>Top100</p>
+			<div class="box music">
+				<p>Hiphop</p>
 			</div>
 		</div>
 		<h2>Music</h2>
@@ -156,17 +58,17 @@
 		</div>
 		<h2>Movie</h2>
 		<div class="yes_grid">
-			<div class="box">
-				<p>Top100</p>
+			<div class="box movies">
+				<p>Drama</p>
 			</div>
-			<div class="box">
-				<p>Top100</p>
+			<div class="box movies">
+				<p>Fantasy</p>
 			</div>
-			<div class="box">
-				<p>Top100</p>
+			<div class="box movies">
+				<p>Comedy</p>
 			</div>
-			<div class="box">
-				<p>Top100</p>
+			<div class="box movies">
+				<p>Horror</p>
 			</div>
 		</div>
 		<!-- News category -->
@@ -193,9 +95,8 @@
 	<!-- Spotify popup -->
 	<div id="category-popup" class="hide">
 		<button onclick="closePopup()">Close</button>
-		<ul id="category-list">
-
-		</ul>
+		<ul id="category-list-music" class="category-list"></ul>
+		<ul id="category-list-movies" class="category-list"></ul>
 	</div>
 
 	<!-- News popup -->
@@ -211,7 +112,7 @@
 		</div>
 	</div>
 
-	<script src="/js/script.js"></script>
+	<script src="/js/spotifyTmdb.js"></script>
 	<script src="/js/fetchNews.js"></script>
 </body>
 

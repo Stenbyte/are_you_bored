@@ -9,9 +9,9 @@
     top: 0;
     left: 10%;
     background-color: rgba(0, 0, 0, 0.8);
-    /* display: flex;
+    display: flex;
     justify-content: center;
-    align-items: center; */
+    align-items: center;
     border-radius: 5px;
     overflow: scroll;
 }
@@ -58,12 +58,10 @@
 
 .movies-content {
     padding: 5rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    
 }
 
 .movie-card {
-    width: 300px;
+    width: 200px;
     margin-bottom: 2rem;
 }
