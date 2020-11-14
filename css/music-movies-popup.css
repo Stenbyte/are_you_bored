@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -63,7 +63,7 @@
 
 /* specific CSS for movies */
 
-.movies-content {
+/* .movies-content {
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -74,4 +74,4 @@
  .movie-card {
     width: 200px;
     margin-bottom: 2rem;
-}
+}  */
