@@ -124,7 +124,6 @@ const controller = {
                 //create html string to be injected
                 let html = `<h2>Recommended ${genreId} movies</h2><div class="movies-content">`
                 html += movies.results.slice(0, limit).map(movie => {
-                    console.log(movie)
                     if(movie.poster_path || movie.backdrop_path){
                         return `<li><div class="movie-card"><h4>${movie.title}</h4><img src="https://image.tmdb.org/t/p/w500/${movie.poster_path || movie.backdrop_path}" alt="picture of ${movie.title}" /><div></li>`
                     } else {
@@ -133,7 +132,6 @@ const controller = {
                     
                 }).join(''); //join() to get rid of , (comma) in html
                 html += `</div>`
-                console.log(html)
                 document.getElementById('category-list-movies').innerHTML = html;
             })
             .catch(err => console.log(err));
@@ -151,6 +149,19 @@ const controller = {
     }))
 
 })();
+
+function getRandomItems(arr, size){
+    console.log(arr);
+    const randomizedArray = [];
+    do{
+        const randomIndex = Math.floor(Math.random() * 500);
+        console.log(randomIndex);
+        randomizedArray.push(arr[randomIndex]);
+    }
+    while(randomizedArray.length < size);
+    console.log(randomizedArray);
+    return randomizedArray;
+}
 
 const closePopup = () => {
     controller.popupModal.classList.add('hide');
