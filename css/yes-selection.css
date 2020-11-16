@@ -58,6 +58,9 @@ header .yes img {
   padding: 0.1rem;
   margin-top: 1rem;
 }
+header .yes a {
+	text-decoration: none;
+}
 .yes_grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -71,6 +74,26 @@ header .yes img {
   border-radius: 5px;
   box-shadow: 0 0 20px var(--seconddark);
 }
+.Chuck {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 50vh;
+}
+.Chuck img {
+	width: 30%;
+}
+
+
+#jokeText {
+	background: white;
+	width: 600px;
+	min-height: 10vh;
+	padding: 1rem;
+	border-radius: 10px;
+	align-items: baseline;
+}
+
 
 /*  Spotify */
 /* Category Popup */
