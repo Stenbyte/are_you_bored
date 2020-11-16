@@ -7,7 +7,6 @@ const controller = {
 
 (function () {
     const musicBoxes = document.querySelectorAll('.music');
-
     const clientId = '139751bc115f43329c1ed10b37f49eef';
     const clientSecret = '3a241c55178d456ca803c1b8a8ae11d6';
     let token;
@@ -19,7 +18,6 @@ const controller = {
     const spotifySearch = async () => {
 
         //get token neede to access Spotify api endpoints
-
         const result = await fetch('https://accounts.spotify.com/api/token', {
             method: 'POST',
             headers: {
@@ -43,8 +41,8 @@ const controller = {
             });
 
             const data = await result.json();
-            console.log(data)
             const randomNumber = Math.floor(Math.random()*limit) + 1;
+
             if(!data.playlists.items[randomNumber].description){
                 spotifyListTitle = '';
             } else {
@@ -52,7 +50,6 @@ const controller = {
             }
             
             tracksEndPoint = data.playlists.items[randomNumber].tracks.href;
-            console.log(tracksEndPoint);
 
             const getTracks = async (token, tracksEndPoint) => {
                 const limit = 30;
@@ -72,7 +69,7 @@ const controller = {
                         spotifyURIs.push(track.track.uri);
                     }
                 });
-                console.log(data.items);
+
                 //map over the tracks and return them as html
                 let i = -1; //needed to keep track of the arrays of spotify URIs stored in the spotifyURI array
                 let html = `<h2>${spotifyListTitle}<button onClick="closePopup()" class="upper-close-btn">Close</button></h2><div class="music-content">`
@@ -89,9 +86,6 @@ const controller = {
                         <input onclick="closePopup()" type="button" class="close-btn" value="Close">
                         </div>`;
                 document.getElementById('category-list-music').innerHTML = html;
-
-                // return data.items;
-
             }
             getTracks(token, tracksEndPoint);
         }
@@ -172,7 +166,6 @@ const controller = {
     movieBoxes.forEach(box => box.addEventListener('click', (e) => {
         document.getElementById('category-list-movies').innerHTML = '';
         document.getElementById('category-list-music').innerHTML = '';
-
         controller.popupModal.classList.remove('hide');
         controller.popupOpen = true;
         genreId = e.target.innerText.toLowerCase();
@@ -180,19 +173,6 @@ const controller = {
     }))
 
 })();
-
-function getRandomItems(arr, size){
-    console.log(arr);
-    const randomizedArray = [];
-    do{
-        const randomIndex = Math.floor(Math.random() * 500);
-        console.log(randomIndex);
-        randomizedArray.push(arr[randomIndex]);
-    }
-    while(randomizedArray.length < size);
-    console.log(randomizedArray);
-    return randomizedArray;
-}
 
 const closePopup = () => {
     controller.popupModal.classList.add('hide');
