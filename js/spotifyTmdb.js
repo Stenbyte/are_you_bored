@@ -75,7 +75,7 @@ const controller = {
                 console.log(data.items);
                 //map over the tracks and return them as html
                 let i = -1; //needed to keep track of the arrays of spotify URIs stored in the spotifyURI array
-                let html = `<h2>${spotifyListTitle}</h2><div class="music-content">`
+                let html = `<h2>${spotifyListTitle}<button onClick="closePopup()" class="upper-close-btn">Close</button></h2><div class="music-content">`
                 html += data.items.map(item => {
                     i++
                     return `<li>
@@ -84,7 +84,10 @@ const controller = {
                                 </div>
                             </li>`
                 }).join('');
-                html += `</div>`;
+                html += `</div>
+                <div class="modal-footer">
+                        <input onclick="closePopup()" type="button" class="close-btn" value="Close">
+                        </div>`;
                 document.getElementById('category-list-music').innerHTML = html;
 
                 // return data.items;
@@ -124,8 +127,9 @@ const controller = {
     }
 
     const movieSearch = (genreId) => {
+        const randomNumber = Math.floor(Math.random()*50 + 1); //randomize which page (1-50) will ba shown results from
         //fetch movies from a specified genre based on the movie revenue
-        const url = `https://api.themoviedb.org/3/discover/movie?with_genres=${movieGenres[genreId]}&sort_by=revenue.desc&api_key=0a77033036d0112b03d5fb8d85f886b1`;
+        const url = `https://api.themoviedb.org/3/discover/movie?with_genres=${movieGenres[genreId]}&sort_by=revenue.desc&page=${randomNumber}&api_key=0a77033036d0112b03d5fb8d85f886b1`;
 
         fetch(url)
             .then(res => res.json())
@@ -134,23 +138,31 @@ const controller = {
                 //only map over the first 10 movies in the array
                 let limit = 20;
                 //create html string to be injected
-                let html = `<h2>Recommended ${genreId} movies</h2><div class="movies-content">`
+                let html = `<h2>Recommended ${genreId} movies<button onClick="closePopup()" class="upper-close-btn">Close</button></h2><div class="movies-content">`
                 html += movies.results.slice(0, limit).map(movie => {
                     if(movie.poster_path || movie.backdrop_path){
                         return `<li>
                                     <div class="movie-card">
-                                        <h4>${movie.title}</h4>
+                                        <h4 class="movie-title">${movie.title}<span class="movie-score"> ${movie.vote_average}</span></h4>
                                         <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path || movie.backdrop_path}" alt="picture of ${movie.title}" />
-                                        <p>${movie.overview}</p>
+                                        <p class="movie-overview">${movie.overview}</p>
                                     <div>
                                 </li>
                         `
                     } else {
-                        return `<li><div class="movie-card"><h4>${movie.title}</h4><span><i class="far fa-eye-slash"></i></span></div></li>`
+                        return `<li>
+                                    <div class="movie-card">
+                                        <h4 class="movie-title">${movie.title} <span class="movie-score"> ${movie.vote_average}</span></h4>
+                                        <span><i class="far fa-eye-slash"></i></span>
+                                    </div>
+                                </li>`
                     }
                     
                 }).join(''); //join() to get rid of , (comma) in html
-                html += `</div>`
+                html += `</div>
+                        <div class="modal-footer">
+                        <input onclick="closePopup()" type="button" class="close-btn" value="Close">
+                        </div>`
                 document.getElementById('category-list-movies').innerHTML = html;
             })
             .catch(err => console.log(err));
