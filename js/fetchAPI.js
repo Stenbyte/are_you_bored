@@ -73,19 +73,26 @@ const fetchBooks = (url) => {
 			console.log(data);
 			const books = getRandomObj(data.results.books, 10);
 			let renderedBook = books.map((book) => {
-				const { title, book_image: img, amazon_product_url: url } = book;
-				console.log(title, img, url);
+				const {
+					title,
+					book_image: img,
+					amazon_product_url: url,
+					description,
+				} = book;
+
 				return `
-			  <div  class="article article--books">
-			  <img src=${img} alt="" class="book-img">
+				<div  class="article article--books">
+				<a href="${url}">
+			  <img src=${img} alt="" class="book-img"></a>
 			  <h4>
 			  <a href=${url} target="_blank" class="title-link">${title}</a>
-			  </h4>
+				</h4>
+				<p class="book-desc">${description}</p>
 			  </div>`;
 			});
 
 			renderedBook = renderedBook.join('');
-			console.log(renderedBook);
+
 			return (modalBody.innerHTML = renderedBook);
 		});
 };
@@ -99,7 +106,6 @@ function closeModal() {
 }
 
 closeBtn.addEventListener('click', closeModal);
-
 window.addEventListener('click', (e) => {
 	if (e.target == modal) {
 		modal.classList.remove('show-modal');

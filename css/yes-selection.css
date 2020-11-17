@@ -207,6 +207,7 @@ header .yes a {
 .modal-body h4 {
 	max-width: 400px;
 }
+
 .title-link {
 	text-decoration: none;
 	color: #000;
@@ -225,16 +226,20 @@ header .yes a {
 	margin-bottom: 1rem;
 }
 
+/* Single book styling */
+
+.book-img {
+	width: 320px;
+	height: 450px;
+}
+
+.book-desc {
+	margin-top: 0.5rem;
+	padding-left: 0rem;
+}
+
 @media screen and (min-width: 768px) {
 	.modal-content {
 		padding: 3rem 5rem;
 	}
-	/* .news-img {
-		object-fit: cover;
-		width: auto;
-	} */
-	/* .img-thumbnail {
-		width: 400px;
-		max-height: 250px;
-	} */
 }
