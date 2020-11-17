@@ -57,21 +57,37 @@
 				</div>
 			</div>
 			<h2>Movie</h2>
-			<div class="yes_grid">
-				<div class="box">
-					<p>Top100</p>
-				</div>
-				<div class="box">
-					<p>Top100</p>
-				</div>
-				<div class="box">
-					<p>Top100</p>
-				</div>
-				<div class="box">
-					<p>Top100</p>
-				</div>
+		<div class="yes_grid">
+			<div class="box movies">
+				<p>Drama</p>
 			</div>
-			<!-- News category -->
+			<div class="box movies">
+				<p>Fantasy</p>
+			</div>
+
+		
+			<div class="Chuck">
+				<p id="jokeText"></p>
+				<img src="/img/Chuck.png" alt="chuck" id="jokeBtn" />
+			</div>
+		</main>
+		<footer>
+			<h3>Team_4</h3>
+		</footer>
+		<!-- Spotify popup -->
+		<div id="category-popup" class="hide">
+			<button onclick="closePopup()">Close</button>
+			<ul id="category-list"></ul>
+		</div>
+
+			<div class="box movies">
+				<p>Comedy</p>
+			</div>
+			<div class="box movies">
+				<p>Horror</p>
+			</div>
+		</div>
+          	<!-- News category -->
 			<h2 id="news-title">News</h2>
 			<div class="yes_grid">
 				<div class="box news-category" id="top-news">
@@ -87,19 +103,20 @@
 					<p>Health</p>
 				</div>
 			</div>
-			<div class="Chuck">
-				<p id="jokeText"></p>
-				<img src="/img/Chuck.png" alt="chuck" id="jokeBtn" />
-			</div>
+  
+      <div class="Chuck">
+      <p id="jokeText"></p>
+      <img src="/img/Chuck.png" alt="chuck" id="jokeBtn">
+      </div>
 		</main>
 		<footer>
 			<h3>Team_4</h3>
-		</footer>
-		<!-- Spotify popup -->
-		<div id="category-popup" class="hide">
-			<button onclick="closePopup()">Close</button>
-			<ul id="category-list"></ul>
-		</div>
+    </footer>
+    	<!-- Spotify popup -->
+	<div id="category-popup" class="hide">
+		<ul id="category-list-music" class="category-list"></ul>
+		<ul id="category-list-movies" class="category-list"></ul>
+	</div>
 
 		<!-- MY POPUP -->
 		<div class="modal" id="modal">
@@ -114,8 +131,10 @@
 			</div>
 		</div>
 
-		<script src="/js/script.js"></script>
-		<script src="/js/fetchAPI.js"></script>
-		<script src="/js/Chuck.js"></script>
-	</body>
+
+		
+<script src="/js/fetchAPI.js"></script>
+  <script src="/js/Chuck.js"></script>
+  <script src="/js/spotifyTmdb.js"></script>
+</body>
 </html>
