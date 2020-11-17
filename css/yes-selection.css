@@ -179,15 +179,20 @@ header .yes a {
 	width: 90vw;
 	margin: 50px auto;
 	/* padding: 3rem 5rem; */
-	padding: 20px;
+	padding: 70px;
 }
 
 .modal-body {
-	display: flex;
+	/* display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 1rem;
+	margin-bottom: 1rem; */
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	grid-column-gap: 2rem;
+	grid-row-gap: 2rem;
 }
 
 .modal-footer {
@@ -210,9 +215,10 @@ header .yes a {
 .title-link:hover {
 	color: rgb(148, 147, 147);
 }
-.img-thumbnail {
-	width: 100%;
-	height: auto;
+.news-img {
+	/* object-fit: cover; */
+	width: 300px;
+	height: 200px;
 }
 
 .news-article {
@@ -223,9 +229,12 @@ header .yes a {
 	.modal-content {
 		padding: 3rem 5rem;
 	}
-
-	.img-thumbnail {
+	/* .news-img {
+		object-fit: cover;
+		width: auto;
+	} */
+	/* .img-thumbnail {
 		width: 400px;
 		max-height: 250px;
-	}
+	} */
 }

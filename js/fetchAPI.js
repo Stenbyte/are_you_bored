@@ -3,6 +3,7 @@ const apiKey = '0IPPJhFAzYcNZJWN3eVDbeNJXmmP3zYS';
 // /home.json?api-key=YaFIj8104OC2N7BdGaUDXSwJGterA7KQ';
 
 // /hardcover-fiction.json?api-key=YaFIj8104OC2N7BdGaUDXSwJGterA7KQ';
+
 const BASE_NEWS_URL = 'https://api.nytimes.com/svc/topstories/v2';
 const BASE_BOOKS_URL = 'https://api.nytimes.com/svc/books/v3/lists/current';
 
@@ -48,11 +49,12 @@ const fetchNews = (url) => {
 				const { title, url } = article;
 				const img = article.multimedia
 					? article.multimedia[0].url
-					: 'https://via.placeholder.com/150';
+					: 'https://via.placeholder.com/200';
 
 				return `
-        <div  class="news-article">
-        <img src=${img} alt="" class="img-thumbnail">
+				<div  class="news-article">
+				<a href="${url}">
+        <img src=${img} alt="" class="news-img"></a>
         <h4>
         <a href=${url} target="_blank" class="title-link">${title}</a>
         </h4>
@@ -74,8 +76,8 @@ const fetchBooks = (url) => {
 				const { title, book_image: img, amazon_product_url: url } = book;
 				console.log(title, img, url);
 				return `
-			  <div  class="news-article">
-			  <img src=${img} alt="" class="img-thumbnail">
+			  <div  class="article article--books">
+			  <img src=${img} alt="" class="book-img">
 			  <h4>
 			  <a href=${url} target="_blank" class="title-link">${title}</a>
 			  </h4>
