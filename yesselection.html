@@ -9,10 +9,7 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<!-- Component styles -->
 		<link rel="stylesheet" href="css/yes-selection.css" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Quantico&display=swap"
-			rel="stylesheet"
-		/>
+		<link href="https://fonts.googleapis.com/css2?family=Quantico&display=swap" rel="stylesheet"/>
 	</head>
 	<body>
 		<header>
@@ -25,20 +22,19 @@
 			</nav>
 		</header>
 		<main>
-			<!-- Books categories -->
-			<h2 id="books-title">Books</h2>
+			<h2>Books</h2>
 			<div class="yes_grid">
-				<div class="box books-category" id="manga">
-					<p>Manga</p>
+				<div class="box">
+					<p>Top100</p>
 				</div>
-				<div class="box books-category" id="young-adult">
-					<p>Young Adult</p>
+				<div class="box">
+					<p>Top100</p>
 				</div>
-				<div class="box books-category" id="travel">
-					<p>Travel</p>
+				<div class="box">
+					<p>Top100</p>
 				</div>
-				<div class="box books-category" id="fitness">
-					<p>Fitness</p>
+				<div class="box">
+					<p>Top100</p>
 				</div>
 			</div>
 			<h2>Music</h2>
@@ -57,36 +53,36 @@
 				</div>
 			</div>
 			<h2>Movie</h2>
-			<div class="yes_grid">
-				<div class="box movies">
-					<p>Drama</p>
-				</div>
-				<div class="box movies">
-					<p>Fantasy</p>
-				</div>
-				<div class="box movies">
-					<p>Comedy</p>
-				</div>
-				<div class="box movies">
-					<p>Horror</p>
-				</div>
-			</div>		
-          	<!-- News category -->
-			<h2 id="news-title">News</h2>
-			<div class="yes_grid">
-				<div class="box news-category" id="top-news">
-					<p>Top News</p>
-				</div>
-				<div class="box news-category" id="technology">
-					<p>Technology</p>
-				</div>
-				<div class="box news-category" id="business">
-					<p>Business</p>
-				</div>
-				<div class="box news-category" id="health">
-					<p>Health</p>
-				</div>
-			</div>  
+		<div class="yes_grid">
+			<div class="box movies">
+				<p>Drama</p>
+			</div>
+			<div class="box movies">
+				<p>Fantasy</p>
+			</div>
+			<div class="box movies">
+				<p>Comedy</p>
+			</div>
+			<div class="box movies">
+				<p>Horror</p>
+			</div>
+		</div>
+          <!-- News category -->
+        <h2 id="news-categories">News</h2>
+        <div class="yes_grid">
+          <div class="box new-category" id="top-news">
+            <p>Top News</p>
+          </div>
+          <div class="box new-category" id="technology">
+            <p>Technology</p>
+          </div>
+          <div class="box new-category" id="business">
+            <p>Business</p>
+          </div>
+          <div class="box new-category" id="health">
+            <p>Health</p>
+          </div>
+      </div>
       <div class="Chuck">
       <p id="jokeText"></p>
       <img src="/img/Chuck.png" alt="chuck" id="jokeBtn">
@@ -101,22 +97,20 @@
 		<ul id="category-list-movies" class="category-list"></ul>
 	</div>
 
-		<!-- MY POPUP -->
-		<div class="modal" id="modal">
-			<div class="modal-content">
-				<div class="modal-body" id="modal-body">
-					<!-- single article -->
-				</div>
+	<!-- News popup -->
+	<div class="modal" id="modal">
+		<div class="modal-content news-modal">
+			<div class="modal-body" id="news-modal-body">
+				<!-- single article -->
+			</div>
 
-				<div class="modal-footer">
-					<button type="button" id="close-btn" class="btn">CLOSE</button>
-				</div>
+			<div class="modal-footer ">
+				<button type="button" id="news-close-btn" class="news-btn">CLOSE</button>
 			</div>
 		</div>
+	</div>
 
-
-		
-<script src="/js/fetchAPI.js"></script>
+  <script src="/js/fetchNews.js"></script>
   <script src="/js/Chuck.js"></script>
   <script src="/js/spotifyTmdb.js"></script>
 </body>
