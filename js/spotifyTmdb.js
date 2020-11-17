@@ -33,6 +33,7 @@ const controller = {
         //get first playlist based on what category has been picked
         const getPlaylistByGenre = async (token, genreId) => {
 
+            // choose from limit nr of playlists of a genre
             const limit = 8;
 
             const result = await fetch(`https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`, {
@@ -41,8 +42,8 @@ const controller = {
             });
 
             const data = await result.json();
-            const randomNumber = Math.floor(Math.random()*limit) + 1;
-
+            const randomNumber = Math.floor(Math.random()*limit);
+            console.log(data);
             if(!data.playlists.items[randomNumber].description){
                 spotifyListTitle = '';
             } else {
@@ -129,34 +130,42 @@ const controller = {
             .then(res => res.json())
             .then((movies) => {
                 console.log(movies);
+
                 //only map over the first 10 movies in the array
                 let limit = 20;
+
                 //create html string to be injected
                 let html = `<h2>Recommended ${genreId} movies<button onClick="closePopup()" class="upper-close-btn">Close</button></h2><div class="movies-content">`
+
                 html += movies.results.slice(0, limit).map(movie => {
-                    if(movie.poster_path || movie.backdrop_path){
+
+                    const { poster_path, backdrop_path, title, overview, vote_average } = movie
+
+                    if(poster_path || backdrop_path){
                         return `<li>
                                     <div class="movie-card">
-                                        <h4 class="movie-title">${movie.title}<span class="movie-score"> ${movie.vote_average}</span></h4>
-                                        <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path || movie.backdrop_path}" alt="picture of ${movie.title}" />
-                                        <p class="movie-overview">${movie.overview}</p>
+                                    <a target=”_blank” href="https://www.amazon.com/s?k=${title}&i=shop-instant-video&ref=nb_sb_noss_2"><h4 class="movie-title">${title}<span class="movie-score"> ${vote_average}</span></h4></a>
+                                        <a target=”_blank” href="https://www.amazon.com/s?k=${title}&i=shop-instant-video&ref=nb_sb_noss_2"> <img src="https://image.tmdb.org/t/p/w500/${poster_path || backdrop_path}" alt="picture of ${title}" /></a>
+                                        <p class="movie-overview">${overview}</p>
                                     <div>
                                 </li>
                         `
                     } else {
                         return `<li>
                                     <div class="movie-card">
-                                        <h4 class="movie-title">${movie.title} <span class="movie-score"> ${movie.vote_average}</span></h4>
+                                        <h4 class="movie-title">${title} <span class="movie-score"> ${vote_average}</span></h4>
                                         <span><i class="far fa-eye-slash"></i></span>
                                     </div>
                                 </li>`
                     }
                     
                 }).join(''); //join() to get rid of , (comma) in html
+
                 html += `</div>
                         <div class="modal-footer">
                         <input onclick="closePopup()" type="button" class="close-btn" value="Close">
                         </div>`
+
                 document.getElementById('category-list-movies').innerHTML = html;
             })
             .catch(err => console.log(err));
@@ -178,3 +187,8 @@ const closePopup = () => {
     controller.popupModal.classList.add('hide');
     controller.popupopen = false;
 }
+window.addEventListener('click', (e) => {
+	if (e.target == controller.popupModal) {
+		controller.popupModal.classList.add('hide');
+	}
+});
