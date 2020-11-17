@@ -33,10 +33,16 @@ h3 {
 	color: var(--lightcolor);
 	text-align: center;
 }
-p {
-	color: var(--seconddark);
-	margin-top: 9rem;
-	padding-left: 1rem;
+.par {
+  color: var(--seconddark);
+  /* margin-top: 9rem; */
+  padding-left: 1rem;
+  position: absolute;
+  top: 10rem;
+  font-size: 1.3rem;
+  /* color: var(--lightcolor); */
+  color: white;
+  z-index: 1;
 }
 /* YES section */
 header {
@@ -62,35 +68,61 @@ header .yes a {
 	text-decoration: none;
 }
 .yes_grid {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: 250px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 250px;
+  position: relative;
 }
 .box {
-	height: 200px;
-	width: 300px;
-	background: var(--lightcolor);
-	margin: 0 auto;
-	border-radius: 5px;
-	box-shadow: 0 0 20px var(--seconddark);
+  height: 200px;
+  width: 300px;
+  background: var(--lightcolor);
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 0 20px var(--seconddark);
+  position: relative;
+}
+.box::after {
+  position: absolute;
+  display: block;
+  content: '';
+  background: rgba(3, 19, 16, 0.404);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .Chuck {
 	display: flex;
-	justify-content: space-around;
-	align-items: center;
+	justify-content: center;
+  align-items: center;
 	height: 50vh;
 }
 .Chuck img {
-	width: 30%;
+  width: 30%;
 }
 
 #jokeText {
-	background: white;
+  /* background: white; */
+  color: #e2e2e2;
 	width: 600px;
 	min-height: 10vh;
 	padding: 1rem;
 	border-radius: 10px;
-	align-items: baseline;
+  align-items: baseline;
+  font-size: 1.5rem;
+}
+#jokeBtn {
+  padding: 0.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  background: crimson;
+  box-shadow: 0 0 3px cyan;
+  color: white;
+  margin: 1rem;
+}
+.im {
+  width: 100%;
+  height: 100%;
 }
 
 /*  Spotify */
@@ -110,6 +142,7 @@ header .yes a {
 	border-radius: 5px;
 	overflow: scroll;
 	padding: 5rem;
+	z-index: 10;
 }
 
 .modal-footer {
@@ -238,7 +271,7 @@ header .yes a {
 }
 
 .modal-content {
-	background-color: rgb(252, 241, 237);
+	/* background-color: rgba(0, 0, 0, 0.8); */
 	border-radius: 3px;
 	width: 90vw;
 	margin: 50px auto;
@@ -274,7 +307,7 @@ header .yes a {
 
 .title-link {
 	text-decoration: none;
-	color: #000;
+	color: white;
 }
 
 .title-link:hover {
@@ -300,6 +333,7 @@ header .yes a {
 .book-desc {
 	margin-top: 0.5rem;
 	padding-left: 0rem;
+	color: white;
 }
 
 @media screen and (min-width: 768px) {
