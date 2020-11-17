@@ -147,12 +147,13 @@ header .yes a {
 
 .modal-footer {
 	height: 50px;
+	display: flex;
 }
 
 .upper-close-btn {
 	color: rgb(23, 23, 23);
 	margin: 0 auto;
-	padding: 0.7rem;
+	padding: 1rem;
 	border: none;
 	float: right;
 }
@@ -160,7 +161,7 @@ header .yes a {
 .close-btn {
 	color: rgb(23, 23, 23);
 	margin: 0 auto;
-	padding: 0.7rem;
+	padding: 1rem;
 	border: none;
 }
 
@@ -199,7 +200,7 @@ header .yes a {
 
 .movies-content {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	flex-wrap: wrap;
 }
 
@@ -211,6 +212,11 @@ header .yes a {
 .movie-card p {
 	color: white;
 	margin: 0;
+}
+
+.movie-card a {
+	text-decoration: none;
+	color: var(--lightcolor);
 }
 
 .movie-title {
@@ -230,7 +236,7 @@ header .yes a {
 
 .music-content {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	flex-wrap: wrap;
 }
 
