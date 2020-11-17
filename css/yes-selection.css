@@ -242,4 +242,8 @@ header .yes a {
 	.modal-content {
 		padding: 3rem 5rem;
 	}
+
+	.book-img {
+		width: 290px;
+	}
 }
