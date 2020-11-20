@@ -1,15 +1,3 @@
-/*
-background
-261E3A
-blue
-005490
-red
-C51A28
-light gray
-E2E2E2
-font quantico
-*/
-
 * {
     margin: 0;
     padding: 0;
@@ -30,8 +18,13 @@ nav {
     justify-content: space-between;
 }
 
-nav .logo {
+nav .logo  {
     padding: 0.3rem 1rem 0rem 1rem;
+}
+
+nav .material-icons {
+    position: relative;
+    top: 0.25rem;
 }
 
 nav .selection {
@@ -56,7 +49,7 @@ nav .pill_left {
     }
 
 nav .pill_left:hover {
-    background-image: linear-gradient(#261E3A, #014474);
+    background-image: linear-gradient(#261E3A, #013458);
 }
 
 nav .pill_right {
@@ -64,7 +57,7 @@ nav .pill_right {
     width: 65px;
     border-radius: 0px 150px 150px 0px;
     border: 2px solid #005490;
-    background-image: linear-gradient(#005490, #014474);
+    background-image: linear-gradient(#005490, #013458);
     }
 
 nav a {
@@ -73,7 +66,7 @@ nav a {
 }
 
 nav p {
-    padding: 0.3rem 1rem 0rem 1rem;
+    padding: 0.5rem 1rem 0rem 1rem;
 }
 
 nav .empty {
@@ -95,17 +88,41 @@ nav .empty {
     nav .logo {
         padding: 0.5rem;
     }
+    .empty {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
     nav {
         text-align: center;
     }
+    .empty {
+        display: none;
+    }
 }
 
 main {
+    position: relative;
+    background-image: url("https://source.unsplash.com/GU5rGxIygNQ/1920x1508");
+    background-position: top right;
+    background-size: cover;
     text-align: center;
     padding: 3rem;
-    background-color: #171224;
+    /* background-color: #171224;*/
     height: 92vh;
+}
+
+main::before { /* Places an overlay on the banner section. Not sure I want it, though. */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    height: 92vh;
+    width: 100%;
+    content: "";
+    background: #1712248c;
+}
+
+main h1 {
+    position: relative;
 }

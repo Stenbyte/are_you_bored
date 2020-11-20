@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #261E3A;
+    color: #E2E2E2;
+    font-family: 'Quantico', sans-serif;
+}
+
+nav {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav .logo  {
+    padding: 0.3rem 1rem 0rem 1rem;
+}
+
+nav .material-icons {
+    position: relative;
+    top: 0.25rem;
+}
+
+nav .selection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+nav .pill {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* BLUE PILL */
+
+nav .pill_left_blue {
+    height: 50px;
+    width: 65px;
+    border-radius: 150px 0px 0px 150px;
+    border: 2px solid #005490;
+    text-align: center;
+    padding-top: 0.3rem;
+    }
+
+nav .pill_left_blue:hover {
+    background-image: linear-gradient(#261E3A, #013458);
+}
+
+nav .pill_right_blue {
+    height: 50px;
+    width: 65px;
+    border-radius: 0px 150px 150px 0px;
+    border: 2px solid #005490;
+    background-image: linear-gradient(#005490, #013458);
+    margin-right: 0.5rem;
+    }
+
+/* RED PILL */
+
+nav .pill_left_red {
+    height: 50px;
+    width: 65px;
+    border-radius: 150px 0px 0px 150px;
+    border: 2px solid #C51A28;
+    text-align: center;
+    padding-top: 0.3rem;
+    margin-left: 0.5rem;
+    }
+
+nav .pill_left_red:hover {
+    background-image: linear-gradient(#261E3A, #7c111a);
+}
+
+nav .pill_right_red {
+    height: 50px;
+    width: 65px;
+    border-radius: 0px 150px 150px 0px;
+    border: 2px solid #C51A28;
+    background-image: linear-gradient(#C51A28, #7c111a);
+    }
+
+/* -------------------- */
+
+nav a {
+    text-decoration: none;
+    color: #E2E2E2;
+}
+
+nav p {
+    padding: 0.5rem 1rem 0rem 1rem;
+}
+
+nav .empty {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 1020px) {
+    nav {
+        flex-direction: column;
+        justify-content: center;
+    }
+    nav .selection {
+        flex-direction: column;
+    }
+    nav .selection, nav .pill, nav p {
+        text-align: center;
+        padding: 0.2rem;
+    }
+    nav .logo {
+        padding: 0.5rem;
+    }
+    .empty {
+        display: none;
+    }
+}
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        text-align: center;
+    }
+    .empty {
+        display: none;
+    }
+}
+
+main {
+    position: relative;
+    background-image: url("https://source.unsplash.com/GU5rGxIygNQ/1920x1508");
+    background-position: top right;
+    background-size: cover;
+    text-align: left;
+    padding: 3rem;
+    /* background-color: #171224;*/
+    height: 92vh;
+}
+
+main::before { /* Places an overlay on the banner section. Not sure I want it, though. */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    height: 92vh;
+    width: 100%;
+    content: "";
+    background: #1712248c;
+}
+
+main h1 {
+    position: relative;
+}
+
+/* CONTACT FORM */
+
+.container_contact h1 {
+    text-align: left;
+}
+
+form {
+    text-align: left;
+    width: 50%;
+    position: relative;
+}
+
+form label {
+    display: block;
+}
+
+form .form-group {
+    padding: 10px 0;
+}
+
+form input {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 0;
+}
+
+textarea {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 100px;
+
+}
+
+button {
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #261E3A;
+    color: white;
+    font-family: 'Quantico', sans-serif;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #005490;
+}
