@@ -40,9 +40,8 @@ site.utils = (() => {
      * and populate modalBody with the constructed content
      * 
      * @param {string} url constructed URL for fetching news
-     * @param {HTMLElement} modalBody popup body to populate news content
      */
-    const fetchNews = (url, modalBody) => {
+    const fetchNews = url => {
         site.modal.clear();
 
         return fetch(url)
@@ -67,9 +66,8 @@ site.utils = (() => {
     /**
      * 
      * @param {string} url constructed API Url for fetching book content
-     * @param {HTMLElement} modalBody popup body to populate content
      */
-    const fetchBooks = (url, modalBody) => {
+    const fetchBooks = url => {
         site.modal.clear();
 
         return fetch(url)
